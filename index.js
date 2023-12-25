@@ -86,6 +86,10 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
 ];
+
+console.log("Financial Analysis");
+console.log("----------------");
+
 //Calculate the total number of months:
 const datasAreLong = finances.length;
 console.log("Total Months: " + datasAreLong);
@@ -119,6 +123,24 @@ for (let i = 1; i < finances.length; i++) {
     if (change < greatestDecrease.amount)
         greatestDecrease = { date: finances[i][0], amount: change };
 }
-console.log("Greatest Increase in Profits/Losses: ", greatestIncrease);
-console.log("Greatest Decrease in Profits/Losses: ", greatestDecrease);
+console.log("Greatest Increase in Profits/Losses: ", greatestIncrease.date, "($", greatestIncrease.amount, ")");
 console.log("Greatest Decrease in Profits/Losses:", greatestDecrease.date, "($", greatestDecrease.amount, ")");
+
+//alternatively calculating the average of the changes in Profit/Losses and then greatest increase and decrease in Profit/Losses
+// Calculate changes in profit/losses
+//let totalChanges = 0;
+//let greatestIncrease = [0, 0]; // [monthIndex, amountIncrease]
+//let greatestDecrease = [0, 0]; // [monthIndex, amountDecrease]
+//for (let i = 1; i < finances.length; i++) {
+//    const change = finances[i][1] - finances[i - 1][1];
+//    totalChanges += change;
+//    if (change > greatestIncrease[1]) {
+//       greatestIncrease = [i, change];
+//    } else if (change < greatestDecrease[1]) {
+//        greatestDecrease = [i, change];
+//    }
+//}
+// Calculate average change
+//const averageChange = totalChanges / (datasAreLong - 1);
+//console.log("Greatest Increase in Profits/Losses:", finances[greatestIncrease[0]][0], "($", greatestIncrease[1], ")");
+//console.log("Greatest Decrease in Profits/Losses:", finances[greatestDecrease[0]][0], "($", greatestDecrease[1], ")");
