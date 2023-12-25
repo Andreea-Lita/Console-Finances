@@ -86,15 +86,25 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
 ];
-// Replace this placeholder with your actual dataset
-const datasetLong = finances.length;
-// Calculate the total number of months
-console.log("The total number of months included in the dataset is: " + datasetLong);
+//Calculate the total number of months:
+const datasAreLong = finances.length;
+console.log("Total number of months included in dataset is: " + datasAreLong);
 
-// Calculate the net total amount of Profit/Losses
+// Calculate the net total amount of Profit/Losses(Adding the profit/loss value of each record)
 let totalProfitLosses = 0;
 for (const recordAtATime of finances) {
-    //net total profit totalProfitLoses
     totalProfitLosses += recordAtATime[1];
 }
 console.log("Total net amount of Profit/Losses $: " + totalProfitLosses);
+//alternatively calculate Total Profit/Losses
+//for (let i = 0; i < finances.length; i++) { totalProfitLosses += finances[i][1];} console.log("Total: $"+totalProfitLosses);
+
+// Calculate the average of the changes in Profit/Losses
+let totalChange = 0;
+for (let i = 1; i < finances.length; i++) {
+    const change = finances[i][1] - finances[i - 1][1];
+    totalChange += change;
+}
+const averageChange = totalChange / (datasAreLong - 1);
+console.log("Average Change:", averageChange.toFixed(2));
+console.log();
