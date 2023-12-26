@@ -25,8 +25,9 @@ Code Structure
 - `index.js`: Contains the JavaScript code that performs the financial analysis.
 Some illustrative screenshot of the project, more specific teh results displayed nd some code after:
 ![Financial info displayed from data array](images/financial_info_calcul_display_results.png)
-console-finances-piece-of code
-![Financial info displayed from data array](images/console-finances-piece-of code.png)
+![Code of calculation for retrieve info](images/console_finances_piece_of_code.png)
+
+
 
 (To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:)
 
